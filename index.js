@@ -8,7 +8,7 @@ const path = require("path");
 const command = process.argv[2];
 const fileName = process.argv[3];
 
-const dirPath = path.join(__dirname, "files");
+const dirPath = path.join(process.cwd(), "files");
 
 function showHelp() {
   console.log(`Filemaster CLI v1.0.0
@@ -38,7 +38,8 @@ if (
   showHelp();
 } else if (command === "create" && fileName !== undefined) {
   try {
-    fs.writeFileSync(`./files/${fileName}`, "");
+    const filePath = path.join(dirPath, fileName);
+    fs.writeFileSync(filePath, "");
 
     console.log(`file ${fileName} has been created successfully!`);
   } catch (err) {
@@ -57,7 +58,8 @@ if (
   rl.on("line", (line) => {
     if (line === "") {
       try {
-        fs.writeFileSync(`./files/${fileName}`, wholeText);
+        const filePath = path.join(dirPath, fileName);
+        fs.writeFileSync(filePath, wholeText);
         console.log(`file ${fileName} has been written successfully!`);
       } catch (err) {
         console.log("Error writing file: ", err.message);
