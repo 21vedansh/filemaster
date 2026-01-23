@@ -9,7 +9,22 @@
   "bin": {
     "filemaster": "./index.js"
   },
-  "keywords": [],
+  "keywords": [
+    "filemaster",
+    "CLI",
+    "cli",
+    "command-line",
+    "node",
+    "nodejs",
+    "filesystem",
+    "fs",
+    "file",
+    "file-manager",
+    "file-operations",
+    "terminal",
+    "tool",
+    "utility"
+  ],
   "author": "Vedansh Dhanraj",
   "license": "MIT",
   "type": "commonjs"
