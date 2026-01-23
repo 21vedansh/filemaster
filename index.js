@@ -4,6 +4,7 @@ const fs = require("fs");
 const readline = require("node:readline");
 const { stdin: input, stdout: output } = require("node:process");
 const path = require("path");
+const packageJson = require("./package.json");
 
 const command = process.argv[2];
 const fileName = process.argv[3];
@@ -11,7 +12,7 @@ const fileName = process.argv[3];
 const dirPath = path.join(process.cwd(), "files");
 
 function showHelp() {
-  console.log(`Filemaster CLI v1.0.0
+  console.log(`Filemaster CLI v${packageJson.version}
 Simple CLI tool to manage files
 
 Usage: 
